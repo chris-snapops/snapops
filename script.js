@@ -11,6 +11,7 @@ function loadPartial(id, url, done) {
     .then(html => {
       el.innerHTML = html;
       if (done) done(el);
+      if (window.__applyLocalLinkRewrite) window.__applyLocalLinkRewrite();
     });
 }
 
@@ -36,3 +37,14 @@ loadPartial('footer-placeholder', 'footer.html', () => {
   const yearEl = document.getElementById('copyright-year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 });
+
+// Local-only dev helper: rewrites clean-URL links to /snapops/*.html for
+// testing under a /snapops/ path prefix. The file is gitignored, so in any
+// environment where it doesn't exist this script tag just 404s silently.
+const localLinkRewrite = document.createElement('script');
+localLinkRewrite.src = 'link-rewrite.local.js';
+localLinkRewrite.onload = () => {
+  if (window.__applyLocalLinkRewrite) window.__applyLocalLinkRewrite();
+};
+localLinkRewrite.onerror = () => {};
+document.head.appendChild(localLinkRewrite);
