@@ -613,6 +613,7 @@ p {
   }
   .site-header__inner {
     flex-wrap: wrap;
+    gap: 0;
   }
   .site-nav__toggle {
     display: flex;
