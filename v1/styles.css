@@ -1,0 +1,265 @@
+@font-face {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("../assets/fonts/roboto-regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("../assets/fonts/roboto-500.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Roboto";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("../assets/fonts/roboto-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Roboto";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("../assets/fonts/roboto-700.woff2") format("woff2");
+}
+
+:root {
+  --color-text: #3a3a3a;
+  --color-accent: #00ab44;
+  --color-accent-hover: #7ea694;
+  --color-accent-active: #cef6e4;
+  --color-dark: #333333;
+  --color-light: #eeeeee;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  color: var(--color-text);
+  background: #ffffff;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+a:hover,
+a:focus {
+  color: var(--color-accent-hover);
+}
+a:active {
+  color: var(--color-accent-active);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 500;
+  color: var(--color-text);
+  margin: 0 0 22px;
+}
+h1 {
+  font-size: 60px;
+  line-height: 1.4;
+}
+h2 {
+  font-size: 32px;
+  text-align: center;
+}
+h3 {
+  font-size: 28px;
+}
+p {
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0 0 16px;
+}
+
+/* Hero */
+
+.hero {
+  min-height: 100vh;
+  padding: 60px 20px;
+  background-image: linear-gradient(to bottom right, #057a34, #333333);
+}
+
+.hero__inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero__content {
+  flex: 7 1 0;
+}
+
+.hero__meeting {
+  flex: 5 1 0;
+}
+
+.logo img {
+  width: 350px;
+  height: auto;
+}
+
+.hero h1 {
+  color: var(--color-light);
+  font-weight: 700;
+}
+
+.hero h1 .accent {
+  color: var(--color-accent);
+}
+
+.rotating {
+  min-width: 200px;
+  display: inline-block;
+}
+.rotating::after {
+  content: "sales";
+  animation: rotateWords 10s infinite;
+  color: var(--color-dark);
+  font-weight: bold;
+}
+@keyframes rotateWords {
+  25% {
+    content: "sales";
+  }
+  50% {
+    content: "renewal";
+  }
+  75% {
+    content: "CS";
+  }
+  100% {
+    content: "tracking";
+  }
+}
+
+.steps {
+  color: var(--color-light);
+  font-size: 24px;
+  padding-left: 48px;
+  margin: 0;
+}
+.steps li {
+  margin-bottom: 11px;
+}
+
+.meetings-iframe-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: var(--color-dark);
+  border-radius: 20px;
+  padding-top: 90px;
+}
+.meetings-iframe-container::before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  height: 100px;
+  width: 100%;
+  background: var(--color-dark);
+  border-radius: 0 0 20px 20px;
+  pointer-events: none;
+}
+.meetings-iframe-container iframe {
+  height: 900px !important;
+  min-width: 100% !important;
+}
+
+/* Features */
+
+.features {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.features__grid {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.feature {
+  flex: 1;
+}
+
+.feature__icon {
+  display: inline-flex;
+  padding: 15px;
+  border-radius: 50%;
+  background: var(--color-dark);
+  margin-bottom: 22px;
+}
+.feature__icon img {
+  width: 16px;
+  height: 16px;
+}
+
+/* Footer */
+
+.footer {
+  padding: 0 24px 40px;
+}
+.footer hr {
+  border: 0;
+  border-bottom: 1px solid var(--color-text);
+  margin: 10px auto;
+}
+
+.footer__columns {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.footer__col--right {
+  text-align: right;
+}
+.footer__col--right p {
+  margin: 0 0 4px;
+}
+
+/* Small screens */
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: auto;
+  }
+  .hero__inner {
+    flex-direction: column;
+  }
+  .features__grid {
+    flex-direction: column;
+  }
+  .footer__columns {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer__col--right {
+    text-align: left;
+  }
+}

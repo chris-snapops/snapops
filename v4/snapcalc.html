@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en-ca">
+<head>
+  <meta charset="utf-8">
+  <title>SnapCalc &mdash; SnapOps</title>
+  <meta name="description" content="SnapCalc is an iOS calculator built by Chris Becher, with arbitrary-precision math, scientific functions, number bases, and equation solving.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" data-sidebar></aside>
+
+    <div class="content">
+      <div class="topbar" data-topbar></div>
+
+      <main>
+        <section class="page-hero">
+          <span class="tag-num">Mobile Apps &middot; SnapCalc</span>
+          <h1>SnapCalc</h1>
+          <p class="lede">A scientific calculator for iOS. The goal is a phone calculator that looks and behaves like a real physical scientific calculator, in the spirit of the Android app ChampCalc, which never made it to iOS.</p>
+        </section>
+
+        <div class="content-inner">
+          <p>It uses an arbitrary&#8209;precision math engine under the hood, so results aren't limited by normal floating&#8209;point rounding the way most phone calculators are. It's fast, it's got big buttons that feel clicky, and it's extremely intuitive for anyone who grew up using a scientific calculator.</p>
+
+          <div class="feature-block">
+            <h3>Two calculator modes</h3>
+            <p><strong>Main Calculator</strong> is the default experience: a full physical&#8209;style keypad with no text&#8209;entry keyboard. Every button press is handled directly, and the equation display supports cursor movement, text selection, and copy.</p>
+            <p><strong>Advanced Calculator</strong> is a stripped&#8209;down, keyboard&#8209;driven mode for people who'd rather type an expression directly, including pasting one in, rather than tap buttons. You can switch into it from Settings, and switch back out again from there too.</p>
+          </div>
+
+          <div class="feature-block">
+            <h3>Everyday math</h3>
+            <ul>
+              <li>Standard arithmetic with parentheses, order of operations, and an &ldquo;ans&rdquo; button to reuse the last result.</li>
+              <li>A &plusmn; sign&#8209;toggle key, percent key, and a scientific&#8209;notation entry key (EE) for typing numbers like 1.5E10.</li>
+              <li>Long, exact results: precision is adjustable from 1 to 100 digits in Settings, with arbitrary&#8209;precision arithmetic instead of standard double&#8209;precision floats.</li>
+              <li>Repeating decimals are detected and shown with a bar over the repeating digits, e.g. 0.6&#772; instead of 0.666666&hellip;</li>
+              <li>Results can be grouped with spaces or commas every 3 (or 4, in binary) digits, or left unformatted, your choice in Settings.</li>
+            </ul>
+          </div>
+
+          <div class="feature-block">
+            <h3>Scientific functions</h3>
+            <ul>
+              <li>Trig: sin, cos, tan, and their reciprocal (csc, sec, cot) and hyperbolic (sinh, cosh, tanh, csch, sech, coth) variants, all with inverse forms. A single button cycles through TRIG / reciprocal&#8209;TRIG / HYP / reciprocal&#8209;HYP, and long&#8209;pressing any trig key gives its inverse.</li>
+              <li>Logs: natural log (ln) and log base 10.</li>
+              <li>Powers and roots: square, cube, arbitrary power (n<sup>y</sup>), reciprocal, square root, and nth root.</li>
+              <li>Factorials, permutations (nPr), and combinations (nCr).</li>
+              <li>GCD, LCM, modulo, absolute value, sign, and a random number button.</li>
+              <li>&pi;, e, and imaginary number support (with a choice of i or j as the symbol).</li>
+            </ul>
+          </div>
+
+          <div class="feature-block">
+            <h3>Number bases</h3>
+            <p>Switch between decimal, hexadecimal, and binary with the BASE button. The keypad automatically shows only the digits valid for the current base, and whatever equation and result are on screen get converted to the new base on the fly, so you don't lose your work switching bases mid&#8209;calculation.</p>
+            <p>In binary and hex, a set of bitwise operators is available: NOT, AND, OR, XOR, NAND, NOR, and XNOR.</p>
+          </div>
+
+          <div class="feature-block">
+            <h3>Result styles</h3>
+            <p>A SMPL button cycles the result style between Number (a decimal approximation), Rational (exact fractions and symbolic forms where possible, e.g. sin(&pi;/4) shows as &radic;2/2 instead of a decimal), and Scientific (scientific notation). An ANGL button cycles the angle unit between radians, degrees, and gradians.</p>
+          </div>
+
+          <div class="feature-block">
+            <h3>Equation solving</h3>
+            <p>Ending an equation with the &ldquo;=0&rdquo; button, instead of the plain &ldquo;=&rdquo;, treats it as &ldquo;solve for x&rdquo; using x, y, or z as the unknown, and returns the full solution set, e.g. x&sup2; &minus; 16 = 0 gives x &isin; { 4, -4 }.</p>
+          </div>
+
+          <div class="feature-block">
+            <h3>History &amp; memory</h3>
+            <p>Every calculation is saved automatically. Press the up/down arrows to step back through previous equations and results, or open the History screen for a full list with details (full formatted equation, mode, timestamp) and the ability to insert an old equation back into the current one.</p>
+            <p>Nine memory slots (V1&ndash;V9) let you store the current result and recall it later into any equation, from the Memory screen.</p>
+          </div>
+
+          <div class="feature-block">
+            <h3>Currency conversion</h3>
+            <p>The Currency screen fetches live exchange rates and lets you pick any two currencies, searchable by country or currency name, not just the 3&#8209;letter code, to insert the conversion rate directly into your equation. It remembers your five most recent currency pairs, with a dedicated keypad button that inserts your last&#8209;used rate with a single tap.</p>
+          </div>
+
+          <div class="feature-block">
+            <h3>Customization</h3>
+            <ul>
+              <li>Haptic feedback on/off, and how long you need to hold a key before its secondary (shift) function triggers.</li>
+              <li>Bracket coloring and bracket highlighting for nested parentheses.</li>
+              <li>Precision (1&ndash;100 digits), result number grouping, default simplify mode, and default angle unit.</li>
+              <li>Choice of symbols for decimal point, multiplication, division, and imaginary numbers.</li>
+              <li>A one&#8209;tap reset back to defaults.</li>
+            </ul>
+          </div>
+
+          <div class="feature-block">
+            <h3>Quick launch</h3>
+            <p>SnapCalc includes an iOS Control Center widget/button so you can jump straight into the app from the lock screen or Control Center without hunting for the icon.</p>
+          </div>
+
+          <section class="cta-band" style="margin-top: 40px;">
+            <h2>Want to see more?</h2>
+            <p>Head back to the mobile apps overview, or get in touch about consulting work.</p>
+            <a href="mobile-apps.html" class="button">Back to Mobile Apps</a>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
