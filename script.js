@@ -21,6 +21,15 @@ loadPartial('header-placeholder', 'header.html', el => {
       link.classList.add('is-active');
     }
   });
+
+  const toggle = el.querySelector('[data-nav-toggle]');
+  const nav = el.querySelector('[data-nav]');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+  }
 });
 
 loadPartial('footer-placeholder', 'footer.html', () => {
