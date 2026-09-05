@@ -500,6 +500,18 @@ p {
   margin-bottom: 10px;
 }
 
+.store-badge {
+  display: inline-block;
+  margin-top: 14px;
+  background: rgba(255, 255, 255, 0.12);
+  color: inherit;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 22px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 .snapcalc-section {
   margin-bottom: 44px;
 }
